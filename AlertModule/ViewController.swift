@@ -9,12 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func openModal(_ sender: UIButton) {
+        let vc = AlertViewController.instantiate(from: .main)
+        slideInTransitioningDelegate.direction = .bottom
+        slideInTransitioningDelegate.type = .half
+        vc.transitioningDelegate = slideInTransitioningDelegate
+        vc.modalPresentationStyle = .custom
+        present(vc, animated: true, completion: nil)
+    }
 }
 
