@@ -20,8 +20,9 @@ enum PresentationType {
 
 class SlideInPresentationManager: NSObject {
     var direction: PresentationDirection = .bottom
-    var type: PresentationType = .full
+    var type: PresentationType = .half
     var disableCompactHeight = false
+    var dismissOnDimmedView = true
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
@@ -32,7 +33,8 @@ extension SlideInPresentationManager: UIViewControllerTransitioningDelegate {
         let presentationController = SlideInPresentationController(presentedViewController: presented,
                                                                    presenting: presenting,
                                                                    direction: direction,
-                                                                   type: type)
+                                                                   type: type,
+                                                                   shouldHandleTapOnDimmedView: dismissOnDimmedView)
         presentationController.delegate = self
         return presentationController
     }

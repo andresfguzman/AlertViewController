@@ -18,9 +18,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openModal(_ sender: UIButton) {
-        let vc = AlertViewController.instantiate(from: .main)
-        slideInTransitioningDelegate.direction = .bottom
-        slideInTransitioningDelegate.type = .half
+        let vc = AlertViewController.instantiate(from: .alertVC)
         vc.transitioningDelegate = slideInTransitioningDelegate
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)

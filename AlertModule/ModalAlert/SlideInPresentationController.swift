@@ -9,20 +9,17 @@
 import UIKit
 
 class SlideInPresentationController: UIPresentationController {
-    //1
     // MARK: - Properties
     private var direction: PresentationDirection
     private var type: PresentationType
     private var dimmingView: UIView!
-    var shouldHandleTapOnDimmedView: Bool = true
+    private var shouldHandleTapOnDimmedView: Bool
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        //1
         var frame: CGRect = .zero
         frame.size = size(forChildContentContainer: presentedViewController,
                           withParentContainerSize: containerView!.bounds.size)
-        
-        //2
+
         switch direction {
         case .bottom:
             frame.origin.y = containerView!.frame.height*(type == .half ? 0.5 : 0.0)
@@ -32,18 +29,18 @@ class SlideInPresentationController: UIPresentationController {
         return frame
     }
     
-    //2
     init(presentedViewController: UIViewController,
          presenting presentingViewController: UIViewController?,
          direction: PresentationDirection,
-         type: PresentationType) {
+         type: PresentationType,
+         shouldHandleTapOnDimmedView: Bool) {
         self.direction = direction
         self.type = type
+        self.shouldHandleTapOnDimmedView = shouldHandleTapOnDimmedView
         
-        //3
         super.init(presentedViewController: presentedViewController,
                    presenting: presentingViewController)
-        setupRadius(with: 10.0, using: presentedView)
+        setupRadius(with: 20.0, using: presentedView)
         setupDimmingView()
     }
     
@@ -51,10 +48,8 @@ class SlideInPresentationController: UIPresentationController {
         guard let dimmingView = dimmingView else {
             return
         }
-        // 1
         containerView?.insertSubview(dimmingView, at: 0)
         
-        // 2
         NSLayoutConstraint.activate(
             NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimmingView]|",
                                            options: [], metrics: nil, views: ["dimmingView": dimmingView]))
@@ -62,7 +57,6 @@ class SlideInPresentationController: UIPresentationController {
             NSLayoutConstraint.constraints(withVisualFormat: "H:|[dimmingView]|",
                                            options: [], metrics: nil, views: ["dimmingView": dimmingView]))
         
-        //3
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 1.0
             return
@@ -70,8 +64,10 @@ class SlideInPresentationController: UIPresentationController {
         
         coordinator.animate(alongsideTransition: { _ in
             self.dimmingView.alpha = 1.0
-            self.presentingViewController.view.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
-            self.presentingViewController.view.layer.cornerRadius = 10.0
+            if self.direction == .bottom {
+                self.presentingViewController.view.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+                self.presentingViewController.view.layer.cornerRadius = 10.0
+            }
         })
     }
     
@@ -119,12 +115,8 @@ private extension SlideInPresentationController {
         dimmingView.addGestureRecognizer(recognizer)
     }
     
-    func setupPanning() {
-        
-    }
-    
-    func setupRadius(with value: CGFloat, using view: UIView?) {
-        view?.layer.cornerRadius = 20
+    func setupRadius(with radius: CGFloat, using view: UIView?) {
+        view?.layer.cornerRadius = radius
         view?.clipsToBounds = true
     }
 }

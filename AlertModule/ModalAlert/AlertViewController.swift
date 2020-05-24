@@ -15,8 +15,4 @@ class AlertViewController: ViewController, Storyboard {
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func dismiss(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
 }
