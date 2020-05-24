@@ -10,7 +10,7 @@ import UIKit
 
 enum Storyboards: String {
     case main = "Main"
-    case alertVC = "LuloAlertViewController"
+    case alertVC = "AlertViewController"
 }
 
 protocol Storyboard {
