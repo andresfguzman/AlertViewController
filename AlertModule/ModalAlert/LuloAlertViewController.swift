@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertViewController: ViewController, Storyboard {
+class LuloAlertViewController: ViewController, Storyboard {
     
     override func viewDidLoad() {
         super.viewDidLoad()

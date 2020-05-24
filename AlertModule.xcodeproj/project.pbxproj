@@ -14,7 +14,7 @@
 		7EAC2854247877FB00C1A6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC2852247877FB00C1A6C4 /* Main.storyboard */; };
 		7EAC2856247877FD00C1A6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC2855247877FD00C1A6C4 /* Assets.xcassets */; };
 		7EAC2859247877FD00C1A6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EAC2857247877FD00C1A6C4 /* LaunchScreen.storyboard */; };
-		7EAC286224787B4B00C1A6C4 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC286124787B4B00C1A6C4 /* AlertViewController.swift */; };
+		7EAC286224787B4B00C1A6C4 /* LuloAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC286124787B4B00C1A6C4 /* LuloAlertViewController.swift */; };
 		7EAC286424787C0700C1A6C4 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC286324787C0700C1A6C4 /* Storyboard.swift */; };
 		7EAC2866247880B900C1A6C4 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC2865247880B900C1A6C4 /* SlideInPresentationManager.swift */; };
 		7EAC2868247882D900C1A6C4 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC2867247882D900C1A6C4 /* SlideInPresentationController.swift */; };
@@ -31,7 +31,7 @@
 		7EAC2855247877FD00C1A6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EAC2858247877FD00C1A6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EAC285A247877FD00C1A6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EAC286124787B4B00C1A6C4 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		7EAC286124787B4B00C1A6C4 /* LuloAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuloAlertViewController.swift; sourceTree = "<group>"; };
 		7EAC286324787C0700C1A6C4 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		7EAC2865247880B900C1A6C4 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		7EAC2867247882D900C1A6C4 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
@@ -77,7 +77,6 @@
 				7EAC2855247877FD00C1A6C4 /* Assets.xcassets */,
 				7EAC2857247877FD00C1A6C4 /* LaunchScreen.storyboard */,
 				7EAC285A247877FD00C1A6C4 /* Info.plist */,
-				7E54FBE5247A0DB30081998A /* LuloAlertViewController.storyboard */,
 			);
 			path = AlertModule;
 			sourceTree = "<group>";
@@ -85,10 +84,11 @@
 		7EAC286024787B1C00C1A6C4 /* ModalAlert */ = {
 			isa = PBXGroup;
 			children = (
-				7EAC286124787B4B00C1A6C4 /* AlertViewController.swift */,
+				7EAC286124787B4B00C1A6C4 /* LuloAlertViewController.swift */,
 				7EAC2865247880B900C1A6C4 /* SlideInPresentationManager.swift */,
 				7EAC2867247882D900C1A6C4 /* SlideInPresentationController.swift */,
 				7EAC28692478B8D200C1A6C4 /* SlideInPresentationAnimator.swift */,
+				7E54FBE5247A0DB30081998A /* LuloAlertViewController.storyboard */,
 			);
 			path = ModalAlert;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				7EAC2868247882D900C1A6C4 /* SlideInPresentationController.swift in Sources */,
 				7EAC284F247877FB00C1A6C4 /* SceneDelegate.swift in Sources */,
 				7EAC2866247880B900C1A6C4 /* SlideInPresentationManager.swift in Sources */,
-				7EAC286224787B4B00C1A6C4 /* AlertViewController.swift in Sources */,
+				7EAC286224787B4B00C1A6C4 /* LuloAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

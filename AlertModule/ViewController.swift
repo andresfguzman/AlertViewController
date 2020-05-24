@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openModal(_ sender: UIButton) {
-        let vc = AlertViewController.instantiate(from: .alertVC)
+        let vc = LuloAlertViewController.instantiate(from: .alertVC)
         vc.transitioningDelegate = slideInTransitioningDelegate
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)
