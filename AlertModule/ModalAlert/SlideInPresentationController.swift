@@ -22,7 +22,7 @@ class SlideInPresentationController: UIPresentationController {
 
         switch direction {
         case .bottom:
-            frame.origin.y = containerView!.frame.height*(type == .half ? 0.5 : 0.0)
+            frame.origin.y = containerView!.frame.height*(type == .half ? 0.5 : 0.08)
         default:
             frame.origin = .zero
         }
@@ -91,7 +91,7 @@ class SlideInPresentationController: UIPresentationController {
                        withParentContainerSize parentSize: CGSize) -> CGSize {
         switch direction {
         case .bottom, .top:
-            return CGSize(width: parentSize.width, height: parentSize.height*(type == .half ? 0.5 : 1.0))
+            return CGSize(width: parentSize.width, height: parentSize.height*(type == .half ? 0.5 : 0.92))
         }
     }
 }
